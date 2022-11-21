@@ -1,0 +1,100 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<title>Automatizációk használata</title>
+	</head>
+
+	<body>
+		
+		<div class="vehicle-table">
+			<table>
+			
+				<tr class="table-title">
+					<th class="col-1" colspan="25">Automatizációk használata</th>
+				</tr>
+				
+				<tr class="table-header1">
+					<th class="col-1" rowspan="2">projekt</th>
+					<th class="col-2" colspan="2">január</th>
+					<th class="col-3" colspan="2">február</th>
+					<th class="col-4" colspan="2">március</th>
+					<th class="col-5" colspan="2">április</th>
+					<th class="col-6" colspan="2">május</th>
+					<th class="col-7" colspan="2">június</th>
+					<th class="col-8" colspan="2">július</th>
+					<th class="col-9" colspan="2">augusztus</th>
+					<th class="col-10" colspan="2">szeptember</th>
+					<th class="col-11" colspan="2">október</th>
+					<th class="col-12" colspan="2">november</th>
+					<th class="col-13" colspan="2">december</th>
+				</tr>
+				
+				<tr class="table-header2">
+					<th class="col-1"></th>
+					<th class="col-2">használat</th>
+					<th class="col-3">használó</th>
+					<th class="col-4">használat</th>
+					<th class="col-5">használó</th>
+					<th class="col-6">használat</th>
+					<th class="col-7">használó</th>
+					<th class="col-8">használat</th>
+					<th class="col-9">használó</th>
+					<th class="col-10">használat</th>
+					<th class="col-11">használó</th>
+					<th class="col-12">használat</th>
+					<th class="col-13">használó</th>
+					<th class="col-14">használat</th>
+					<th class="col-15">használó</th>
+					<th class="col-16">használat</th>
+					<th class="col-17">használó</th>
+					<th class="col-18">használat</th>
+					<th class="col-19">használó</th>
+					<th class="col-20">használat</th>
+					<th class="col-21">használó</th>
+					<th class="col-22">használat</th>
+					<th class="col-23">használó</th>
+					<th class="col-24">használat</th>
+					<th class="col-25">használó</th>
+				</tr>
+				
+				<!-- erre volt nyitva egy div, de az invalid use of tag warningot dobott -->
+			
+				<tr th:each="reportRow : ${reportRows}">
+					<td class="col-1" th:text="${reportRow.project}"></td>
+					<td class="col-2" th:text="${reportRow.monthsData(0).nofUsage}"></td>
+					<td class="col-3" th:text="${reportRow.monthsData(0).nofUser}"></td>
+					<td class="col-2" th:text="${reportRow.monthsData(1).nofUsage}"></td>
+					<td class="col-3" th:text="${reportRow.monthsData(1).nofUser}"></td>
+					<td class="col-2" th:text="${reportRow.monthsData(2).nofUsage}"></td>
+					<td class="col-3" th:text="${reportRow.monthsData(2).nofUser}"></td>
+					<td class="col-2" th:text="${reportRow.monthsData(3).nofUsage}"></td>
+					<td class="col-3" th:text="${reportRow.monthsData(3).nofUser}"></td>
+					<td class="col-2" th:text="${reportRow.monthsData(4).nofUsage}"></td>
+					<td class="col-3" th:text="${reportRow.monthsData(4).nofUser}"></td>
+					<td class="col-2" th:text="${reportRow.monthsData(5).nofUsage}"></td>
+					<td class="col-3" th:text="${reportRow.monthsData(5).nofUser}"></td>
+					<td class="col-2" th:text="${reportRow.monthsData(6).nofUsage}"></td>
+					<td class="col-3" th:text="${reportRow.monthsData(6).nofUser}"></td>
+					<td class="col-2" th:text="${reportRow.monthsData(7).nofUsage}"></td>
+					<td class="col-3" th:text="${reportRow.monthsData(7).nofUser}"></td>
+					<td class="col-2" th:text="${reportRow.monthsData(8).nofUsage}"></td>
+					<td class="col-3" th:text="${reportRow.monthsData(8).nofUser}"></td>
+					<td class="col-2" th:text="${reportRow.monthsData(9).nofUsage}"></td>
+					<td class="col-3" th:text="${reportRow.monthsData(9).nofUser}"></td>
+					<td class="col-2" th:text="${reportRow.monthsData(10).nofUsage}"></td>
+					<td class="col-3" th:text="${reportRow.monthsData(10).nofUser}"></td>
+					<td class="col-2" th:text="${reportRow.monthsData(11).nofUsage}"></td>
+					<td class="col-3" th:text="${reportRow.monthsData(11).nofUser}"></td>
+				</tr>
+					
+
+			</table>
+		</div>
+		
+		
+	</body>
+
+</html>

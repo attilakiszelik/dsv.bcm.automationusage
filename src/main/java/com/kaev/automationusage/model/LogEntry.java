@@ -1,7 +1,5 @@
 package com.kaev.automationusage.model;
 
-import java.time.LocalDateTime;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -22,15 +20,17 @@ import lombok.Setter;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 @Table(name = "automationusage")
-public class Data {
+public class LogEntry {
 	
 	@Id
 	@GeneratedValue
 	@EqualsAndHashCode.Include()
 	private long id;
 	
+	private String project;
+	private String type;
 	private String process;
-	private LocalDateTime timestamp;
+	private String timestamp;
 	private String username;
 
 }
