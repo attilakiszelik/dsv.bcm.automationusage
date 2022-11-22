@@ -1,7 +1,6 @@
 package com.kaev.automationusage.service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -23,10 +22,8 @@ public class ReportService {
 		
 		System.out.println(logEntries.size());
 		
-		List<ReportRow> reportRows = logEntries.stream()
-                .filter(l -> l.getProject().equals("számlázatlan"))
-                .map(l -> new ReportRow(l.getProject(), null))
-                .collect(Collectors.toList());
+		//TODO
+		List<ReportRow> reportRows = null;
 		
 		return reportRows;
 		
