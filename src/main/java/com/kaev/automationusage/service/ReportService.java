@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -22,17 +23,48 @@ public class ReportService {
 	public List<ReportRow> createReport(String year){
 		
 		List<LogEntry> logEntries = logEntryRepository.findAllInYear(year);
-		
-		System.out.println(logEntries.size());
-		
+
 		List<ReportRow> reportRows = new ArrayList<ReportRow>();;
-		//TODO
+		
+		logEntries.forEach(l -> {
+			
+			//miden sor esetében a szükséges változók rögzítése
+			String project = l.getProject();
+			int month = Integer.parseInt(l.getTimestamp().substring(4,6));
+			int index = month-1;
+			String user = l.getUsername();
+			
+			Optional<ReportRow> existingReportRow = reportRows.stream().filter(r -> r.getProject().equals(project)).findFirst();
+			
+			if (existingReportRow.isPresent()) {
+				
+				ReportRow r = existingReportRow.get();
+				
+				//használat növelée
+				r.setUsagesInTheMonth(index, r.getUsagesInTheMonth(index) + 1); 
+				//használó hozzáadása, ha még nem szerepel
+				if(!r.getUsersInTheMonth(index).contains(user)) {
+					r.setUsersInTheMonth(index, user);
+				}	
+				
+			} else {
+				
+				//ha a projektnek nincs még riport sora
+				ReportRow newReportRow = initializeNewRepotRow();
+				newReportRow.setProject(project);
+				newReportRow.setUsagesInTheMonth(index, 1);
+				newReportRow.setUsersInTheMonth(index, user);
+				reportRows.add(newReportRow);
+				
+			}
+			
+		});
 		
 		return reportRows;
 		
 	}
 
-	public ReportRow initializeNewRepotRow(String project) {
+	public ReportRow initializeNewRepotRow() {
 		
 		List<Integer> usages = new ArrayList<Integer>();
 			for (int i=0; i<=11; i++)
@@ -40,7 +72,7 @@ public class ReportService {
 		Map<Integer, List<String>> users = new HashMap<Integer, List<String>>();
 			for (int i=0; i<=11; i++)
 				users.put(i, new ArrayList<String>());
-		return new ReportRow(project,usages,users);
+		return new ReportRow("",usages,users);
 		
 	}
 

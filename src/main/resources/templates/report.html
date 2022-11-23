@@ -64,30 +64,30 @@
 			
 				<tr th:each="reportRow : ${reportRows}">
 					<td class="col-1" th:text="${reportRow.project}"></td>
-					<td class="col-2" th:text="${reportRow.monthsData(0).nofUsage}"></td>
-					<td class="col-3" th:text="${reportRow.monthsData(0).nofUser}"></td>
-					<td class="col-2" th:text="${reportRow.monthsData(1).nofUsage}"></td>
-					<td class="col-3" th:text="${reportRow.monthsData(1).nofUser}"></td>
-					<td class="col-2" th:text="${reportRow.monthsData(2).nofUsage}"></td>
-					<td class="col-3" th:text="${reportRow.monthsData(2).nofUser}"></td>
-					<td class="col-2" th:text="${reportRow.monthsData(3).nofUsage}"></td>
-					<td class="col-3" th:text="${reportRow.monthsData(3).nofUser}"></td>
-					<td class="col-2" th:text="${reportRow.monthsData(4).nofUsage}"></td>
-					<td class="col-3" th:text="${reportRow.monthsData(4).nofUser}"></td>
-					<td class="col-2" th:text="${reportRow.monthsData(5).nofUsage}"></td>
-					<td class="col-3" th:text="${reportRow.monthsData(5).nofUser}"></td>
-					<td class="col-2" th:text="${reportRow.monthsData(6).nofUsage}"></td>
-					<td class="col-3" th:text="${reportRow.monthsData(6).nofUser}"></td>
-					<td class="col-2" th:text="${reportRow.monthsData(7).nofUsage}"></td>
-					<td class="col-3" th:text="${reportRow.monthsData(7).nofUser}"></td>
-					<td class="col-2" th:text="${reportRow.monthsData(8).nofUsage}"></td>
-					<td class="col-3" th:text="${reportRow.monthsData(8).nofUser}"></td>
-					<td class="col-2" th:text="${reportRow.monthsData(9).nofUsage}"></td>
-					<td class="col-3" th:text="${reportRow.monthsData(9).nofUser}"></td>
-					<td class="col-2" th:text="${reportRow.monthsData(10).nofUsage}"></td>
-					<td class="col-3" th:text="${reportRow.monthsData(10).nofUser}"></td>
-					<td class="col-2" th:text="${reportRow.monthsData(11).nofUsage}"></td>
-					<td class="col-3" th:text="${reportRow.monthsData(11).nofUser}"></td>
+					<td class="col-2" th:text="${reportRow.getUsagesInTheMonth(0)}"></td>
+					<td class="col-3" th:text="${reportRow.getNumberOfUsersInTheMonth(0)}"></td>
+					<td class="col-4" th:text="${reportRow.getUsagesInTheMonth(1)}"></td>
+					<td class="col-5" th:text="${reportRow.getNumberOfUsersInTheMonth(1)}"></td>
+					<td class="col-6" th:text="${reportRow.getUsagesInTheMonth(2)}"></td>
+					<td class="col-6" th:text="${reportRow.getNumberOfUsersInTheMonth(2)}"></td>
+					<td class="col-8" th:text="${reportRow.getUsagesInTheMonth(3)}"></td>
+					<td class="col-9" th:text="${reportRow.getNumberOfUsersInTheMonth(3)}"></td>
+					<td class="col-10" th:text="${reportRow.getUsagesInTheMonth(4)}"></td>
+					<td class="col-11" th:text="${reportRow.getNumberOfUsersInTheMonth(4)}"></td>
+					<td class="col-12" th:text="${reportRow.getUsagesInTheMonth(5)}"></td>
+					<td class="col-13" th:text="${reportRow.getNumberOfUsersInTheMonth(5)}"></td>
+					<td class="col-14" th:text="${reportRow.getUsagesInTheMonth(6)}"></td>
+					<td class="col-15" th:text="${reportRow.getNumberOfUsersInTheMonth(6)}"></td>
+					<td class="col-16" th:text="${reportRow.getUsagesInTheMonth(7)}"></td>
+					<td class="col-17" th:text="${reportRow.getNumberOfUsersInTheMonth(7)}"></td>
+					<td class="col-18" th:text="${reportRow.getUsagesInTheMonth(8)}"></td>
+					<td class="col-19" th:text="${reportRow.getNumberOfUsersInTheMonth(8)}"></td>
+					<td class="col-20" th:text="${reportRow.getUsagesInTheMonth(9)}"></td>
+					<td class="col-21" th:text="${reportRow.getNumberOfUsersInTheMonth(9)}"></td>
+					<td class="col-22" th:text="${reportRow.getUsagesInTheMonth(10)}"></td>
+					<td class="col-23" th:text="${reportRow.getNumberOfUsersInTheMonth(10)}"></td>
+					<td class="col-24" th:text="${reportRow.getUsagesInTheMonth(11)}"></td>
+					<td class="col-25" th:text="${reportRow.getNumberOfUsersInTheMonth(11)}"></td>
 				</tr>
 					
 

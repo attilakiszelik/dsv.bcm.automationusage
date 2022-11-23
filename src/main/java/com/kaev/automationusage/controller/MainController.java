@@ -27,8 +27,6 @@ public class MainController {
 	@GetMapping("/createReport")
 	public String createReport(@RequestParam String year, Model model) {
 		
-		System.out.println(year);
-		
 		model.addAttribute("reportRows", reportService.createReport(year));
 		
 		return "report";
