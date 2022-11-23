@@ -1,6 +1,9 @@
 package com.kaev.automationusage.service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -22,10 +25,22 @@ public class ReportService {
 		
 		System.out.println(logEntries.size());
 		
+		List<ReportRow> reportRows = new ArrayList<ReportRow>();;
 		//TODO
-		List<ReportRow> reportRows = null;
 		
 		return reportRows;
+		
+	}
+
+	public ReportRow initializeNewRepotRow(String project) {
+		
+		List<Integer> usages = new ArrayList<Integer>();
+			for (int i=0; i<=11; i++)
+				usages.add(0);
+		Map<Integer, List<String>> users = new HashMap<Integer, List<String>>();
+			for (int i=0; i<=11; i++)
+				users.put(i, new ArrayList<String>());
+		return new ReportRow(project,usages,users);
 		
 	}
 
